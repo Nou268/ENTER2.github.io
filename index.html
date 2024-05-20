@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fireworks with Sound and Applause on Enter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #282c34;
+            color: white;
+        }
+        h1 {
+            font-size: 100px; /* تحديد حجم الخط هنا */
+        }
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* ضع العنصر وراء النص */
+        }
+
+        #math-problem {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 id="message">Press Enter To Publish The Site</h1>
+    <div id="particles-js"></div>
+    <audio id="firework-sound" src="firework-sound.mp4" preload="auto"></audio>
+    <audio id="applause-sound" src="applause.mp4" preload="auto"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                particlesJS("particles-js", {
+                    "particles": {
+                        "number": {
+                            "value": 100, /* زيادة عدد الجسيمات */
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "shape": {
+                            "type": "image",
+                            "image": {
+                                "src": "aee.png",
+                                "width": 100,
+                                "height": 100
+                            }
+                        },
+                        "size": {
+                            "value": 20, /* زيادة حجم الجسيمات */
+                            "random": true
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 9, /* زيادة سرعة الجسيمات */
+                            "direction": "none",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false
+                        }
+                    },
+                    "interactivity": {
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            }
+                        }
+                    }
+                });
+            }
+        });
+        </script>
+
+    
+</body>
+</html>
